@@ -1,0 +1,271 @@
+food_colouring:
+    shop: Tesco
+    unit: g
+button_mushroom:
+    shop: Tesco
+sunflower_oil:
+    shop: Tesco
+mince:
+    shop: Butchers
+corriander_seeds:
+    shop: Local
+chickpea:
+    shop: Sainsburys
+raspberry_jam:
+    shop: Tesco
+parmesan:
+    shop: Cosco
+milk:
+    shop: Tesco
+wholewheat_flour:
+    shop: Tesco
+single_cream:
+    shop: Cosco
+cayenne:
+    shop: Local
+celery:
+    shop: Tesco
+jam:
+    shop: Tesco
+baking_powder:
+    shop: Tesco
+cornflower:
+    shop: Home
+aubergine:
+    shop: Sainsburys
+vanilla_essence:
+    shop: Tesco
+mayo:
+    shop: Tesco
+suet:
+    shop: Tesco
+stout:
+    shop: Sainsburys
+mustard_seeds:
+    shop: Local
+white_wine:
+    shop: Sainsburys
+ketchup:
+    shop: Cosco
+tinned_tomato:
+    shop: Tesco
+tomato_puree:
+    shop: Tesco
+bread:
+    shop: Tesco
+white_vinegar:
+    shop: Sainsburys
+thyme_sprig:
+    shop: Global
+OJ:
+    shop: Tesco
+onion:
+    shop: Tesco
+lettuce:
+    shop: Tesco
+cumin:
+    shop: Local
+roll:
+    shop: Tesco
+egg_large:
+    shop: Tesco
+nutmeg:
+    shop: Tesco
+beef_stock:
+    shop: Tesco
+chilli_powder:
+    shop: Home
+tomato_paste:
+    shop: Tesco
+rice_crispies:
+    shop: Tesco
+pepper:
+    shop: Cosco
+marmalade:
+    shop: Tesco
+turnip:
+    shop: Tesco
+rosemary:
+    shop: Global
+red_onion:
+    shop: Sainsburys
+cayenne_pepper:
+    shop: Local
+coconut_milk:
+    shop: Sainsburys
+icing_sugar:
+    shop: Tesco
+porridge:
+    shop: Tesco
+plain_flour:
+    shop: Tesco
+digestives:
+    shop: Tesco
+tumeric:
+    shop: Home
+mustard_powder:
+    shop: Sainsburys
+selfraising_flour:
+    shop: Tesco
+veg_stock:
+    shop: Real Foods
+corriander:
+    shop: Global
+bay_leaf:
+    shop: Home
+califlower:
+    shop: Sainsburys
+caramel_can:
+    shop: Tesco
+cheddar_cheese:
+    shop: Cosco
+portobello_mushrooms:
+    shop: Tesco
+apple:
+    shop: Tesco
+weetabix:
+    shop: Tesco
+gerkins:
+    shop: Tesco
+fresh_corriander:
+    shop: Global
+rolls:
+    shop: Tesco
+balsamic:
+    shop: Tesco
+parsley:
+    shop: Global
+parsnip:
+    shop: Tesco
+beef_shin:
+    shop: Butchers
+banana:
+    shop: Tesco
+caster_sugar:
+    shop: Tesco
+butter:
+    shop: Cosco
+chocolate:
+    shop: Lidl
+rice:
+    shop: Sainsburys
+syrup:
+    shop: Tesco
+paprika:
+    shop: Local
+self_raising_flour:
+    shop: Tesco
+olive_oil:
+    shop: Cosco
+onion_seeds:
+    shop: Local
+ginger:
+    shop: Global
+carrot:
+    shop: Tesco
+cornflakes:
+    shop: Tesco
+dried_chickpea:
+    shop: Real Foods
+lemon:
+    shop: Tesco
+vege_burger:
+    shop: Tesco
+leek:
+    shop: Tesco
+stock:
+    shop: Real Foods
+fenugreek:
+    shop: Local
+mustard:
+    shop: Costco
+tinned_tomatoe:
+    shop: Sainsburys
+garlic_clove:
+    shop: Tesco
+red_chilli:
+    shop: Sainsburys
+tomato:
+    shop: Tesco
+potato:
+    shop: Tesco
+indian_breads:
+    shop: Local
+salt:
+    shop: Cosco
+tea_bags:
+    shop: Cosco
+coffee:
+    shop: Cosco
+hot_chocolate:
+    shop: Cosco
+sugar:
+    shop: Tesco
+milk:
+    shop: Tesco
+squash:
+    shop: Tesco
+double_cream:
+    shop: Costco
+tin_foil:
+    shop: Tesco
+cling_film:
+    shop: Tesco
+olive_oil:
+    shop: Cosco
+sunflower_oil:
+    shop: Cosco
+marshmallows:
+    shop: Cosco
+kids_yogurts:
+    shop: Tesco
+full_fat_milk:
+    shop: Tesco
+green_chilli:
+    shop: Global
+sweet_potato:
+    shop: Tesco
+tin_coconut_milk:
+    shop: Tesco
+crisps:
+    shop: Tesco
+cardamon:
+    shop: Local
+frozen_peas:
+    shop: Tesco
+garlic_cloves:
+    shop: Tesco
+hummous:
+    shop: Tesco
+cucumber:
+    shop: Tesco
+gluten_free_option_1:
+    shop: Real Foods
+gluten_free_option_2:
+    shop: Real Foods
+gluten_free_option_3:
+    shop: Real Foods
+egg_dairy_free_opt1:
+    shop: Real Foods
+egg_dairy_free_opt2:
+    shop: Real Foods
+egg_dairy_free_opt3:
+    shop: Real Foods
+melon:
+    shop: Tesco
+grape:
+    shop: Tesco
+oranges:
+    shop: Tesco
+pineapple:
+    shop: Tesco
+mango:
+    shop: Tesco
+gluten_free_roll:
+    shop: Tesco
+glace:
+    shop: Tesco
+ice_cream:
+    shop: Tesco
+seitan:
+    shop: Real Foods

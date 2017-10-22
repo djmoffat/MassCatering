@@ -1,0 +1,4 @@
+name: Ice Cream
+servers: 1
+ingredients:
+    ice_cream: 90

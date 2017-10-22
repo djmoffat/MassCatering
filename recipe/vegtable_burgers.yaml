@@ -1,0 +1,15 @@
+name: Vegetarian Burgers
+servers: 1
+ingredients:
+    vege_burger: 1
+    onion: 0.5
+    parsley: 2 g
+    cumin: 0.2 g
+    corriander_seeds: 0.2 g
+    tomato: 0.2
+    lettuce: 0.05
+    rolls: 1
+    gerkins: 0.025 large_jar
+    mayo: 15 ml
+    mustard: 2ml
+    ketchup: 15g
