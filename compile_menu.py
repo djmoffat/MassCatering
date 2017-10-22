@@ -186,6 +186,8 @@ for item in menu:
 
     f.close()
 
-print ingredients.all_byshop()
+outfile = open("shoppinglist.md", "w")
+outfile.write(ingredients.all_byshop())
+outfile.close()
 
 
