@@ -113,6 +113,7 @@ class Ingredients():
         if ingredient in self.l.keys():
             #try:
             a = self.l[ingredient]
+            print "Adding %s %s:" % (value, unit)
             a.add(value, unit)
             self.l[ingredient] = a
         #except:
@@ -150,6 +151,7 @@ for item in menu:
         file = "recipe/" + item + ".yaml"
         recipe = open_yaml(file)
     except:
+        # not very elegant
         print "Can't open %s as recipe... trying as single ingredient" % item
         (number, unit) = amount_units(menu[item])
         print "%20s: %8.2f %s" % (item, float(number), unit)
@@ -160,7 +162,7 @@ for item in menu:
 
     if not skip:
         f = open(item + ".md", "w")
-        f.write("#{!s}\n".format(item))
+        f.write("output/#{!s}\n".format(item))
         f.write("\n")
 
         # DO we have serves?
@@ -186,7 +188,7 @@ for item in menu:
 
     f.close()
 
-outfile = open("shoppinglist.md", "w")
+outfile = open("output/shoppinglist.md", "w")
 outfile.write(ingredients.all_byshop())
 outfile.close()
 
