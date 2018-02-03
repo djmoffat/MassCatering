@@ -3,6 +3,7 @@
 import yaml
 import re
 import sys
+import os
 from pint import UnitRegistry
 
 ureg = UnitRegistry()
@@ -29,6 +30,9 @@ ureg.define('tomato = 62 grams')
 ureg.define('slice = 10 grams')
 ureg.define('unit = 1 grams')
 ureg.define('potato = 150 grams')
+
+# 1 tsp smoked paprika = 3.3g
+# 9 cloves garlic in a bulb
 
 def open_yaml(file):
     with open(file, 'r') as stream:
@@ -78,7 +82,7 @@ toget = dict()
 class Ingredient():
     """A Class to store ingredients - hopefully also do unit conversions 
     if needed"""
-
+    
 
     def __init__(self, name, value, unit):
         self.name = name
@@ -106,20 +110,33 @@ class Ingredients():
     default_shop = "Tesco"
     shops = dict()
 
+    # Unit equivalents.
+    equi = dict()
+    equi['onions'] = ['onion']
+    equi['celery'] = ['celery_sticks']
+    equi['carrots'] = ['carrot']
+    equi['garlic_cloves'] = ['garlic']
+
     def __init__(self):
         self.l = dict()
 
     def add(self, ingredient, value, unit):
+        ingredient = self.equivalent_check(ingredient)
         if ingredient in self.l.keys():
             #try:
             a = self.l[ingredient]
             print "Adding %s %s:" % (value, unit)
             a.add(value, unit)
             self.l[ingredient] = a
-        #except:
-        #        import pdb; pdb.set_trace()
         else:
             self.l[ingredient] = Ingredient(ingredient, value, unit)
+
+    def equivalent_check(self, ingredient):
+        for equivalent in self.equi.keys():
+            if ingredient in self.equi[equivalent]:
+                return equivalent
+
+        return ingredient
 
     def all_byshop(self):
         output = ""
@@ -161,8 +178,9 @@ for item in menu:
         continue
 
     if not skip:
-        f = open(item + ".md", "w")
-        f.write("output/#{!s}\n".format(item))
+        mdname = os.path.basename(item + ".md")
+        f = open("output/" + mdname, "w")
+        f.write("#{!s}\n".format(item))
         f.write("\n")
 
         # DO we have serves?
