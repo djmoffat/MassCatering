@@ -180,7 +180,7 @@ for item in menu:
     if not skip:
         mdname = os.path.basename(item + ".md")
         f = open("output/" + mdname, "w")
-        f.write("#{!s}\n".format(item))
+        f.write("# {!s}\n".format(recipe['name']))
         f.write("\n")
 
         # DO we have serves?
@@ -195,7 +195,7 @@ for item in menu:
             (number, unit) = amount_units(amount)
             number = float(number) / serves
             f.write("%28s: %8.2f %s\n" % (ingredient, float(number) * people, unit))
-            ingredients.add(ingredient, float(number) * people, unit)
+            ingredients.add(ingredient, round(float(number) * people,3), unit)
 
     try:
         f.write("## Description\n")
