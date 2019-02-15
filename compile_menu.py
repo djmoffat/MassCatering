@@ -97,7 +97,7 @@ class Ingredient():
         if len(unit) > 0:
             self.value = self.value + (value * ureg.parse_expression(unit))
         else:
-            print "using " + name + " as unit"
+            print "using " + self.name + " as unit"
             self.value = self.value + (value * ureg.parse_expression(self.name))
 
     def pr(self):
