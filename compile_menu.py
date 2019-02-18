@@ -107,7 +107,7 @@ class Ingredients():
     """ All the ingredients """
 
     food = open_yaml("food.yaml")
-    default_shop = "Tesco"
+    default_shop = "Supermarket"
     shops = dict()
 
     # Unit equivalents.
@@ -160,6 +160,8 @@ class Ingredients():
 
 ingredients = Ingredients()
 menu = open_yaml(sys.argv[1])
+folderName = 'output/' + sys.argv[1].split('/')[-1].split('.')[0] + '/'
+os.mkdir(folderName)
 for item in menu:
     skip = False
     try:
@@ -179,7 +181,8 @@ for item in menu:
 
     if not skip:
         mdname = os.path.basename(item + ".md")
-        f = open("output/" + mdname, "w")
+
+        f = open(folderName + mdname, "w")
         f.write("# {!s}\n".format(recipe['name']))
         f.write("\n")
 
@@ -195,7 +198,7 @@ for item in menu:
             (number, unit) = amount_units(amount)
             number = float(number) / serves
             f.write("%28s: %8.2f %s\n" % (ingredient, float(number) * people, unit))
-            ingredients.add(ingredient, round(float(number) * people,3), unit)
+            ingredients.add(ingredient, float(number) * people, unit)
 
     try:
         f.write("## Description\n")
@@ -206,7 +209,7 @@ for item in menu:
 
     f.close()
 
-outfile = open("output/shoppinglist.md", "w")
+outfile = open(folderName + "shoppinglist.md", "w")
 outfile.write(ingredients.all_byshop())
 outfile.close()
 
