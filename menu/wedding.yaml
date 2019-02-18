@@ -1,0 +1,43 @@
+# General
+wedding_by_people:
+    people: 53
+wedding:
+    people: 53
+
+# Friday
+mexican_chilli:
+    people: 46
+vegan_chilli: 
+    people: 5
+rice: 
+    people: 53
+
+# Saturday
+breakfast:
+    people: 51
+packed_lunch:
+    people: 52
+gluten_free_rolls: 12 unit
+
+# Sunday
+cooked_breakfast:
+    people: 60
+veggie_breakfast:
+    people: 8
+avocado: 8 units
+
+soups/squash_and_chickpea_soup:
+    people: 40
+soups/veg_and_lentil_soup:
+    people: 40
+
+haggis:
+    people: 46
+fruit_salad:
+    people: 46
+ice_cream: 6l
+
+# Monday
+breakfast:
+    people: 46
+gluten_free_rolls: 12 unit
