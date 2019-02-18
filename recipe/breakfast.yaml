@@ -2,6 +2,8 @@ name: Breakfast
 serves: 1
 ingredients:
     butter: 10g
+    peanut_butter: 5g
+    marmite: 3g
     jam: 10g
     marmalade: 7g
     bread: 1.5 slices
@@ -11,4 +13,3 @@ ingredients:
     rice_crispies: 9g
     weetabix: 0.4 unit
     porridge: 20g
-    syrup: 10g
