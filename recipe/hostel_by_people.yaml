@@ -1,4 +1,4 @@
-name: Other By People by Day
+name: General Item By Person
 serves: 1
 ingredients:
     tea_bags: 1 
@@ -7,5 +7,6 @@ ingredients:
     sugar: 2g
     milk: 100 ml
     squash: 50 ml
+    biscuit: 0.5 unit
     
 

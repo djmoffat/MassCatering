@@ -7,6 +7,8 @@ import os
 import pdb
 from pint import UnitRegistry
 
+compile_pandoc = True
+
 ureg = UnitRegistry()
 # Some definitions
 ureg.define('carrot = 72 grams')
@@ -140,7 +142,7 @@ class Ingredients():
         return ingredient
 
     def all_byshop(self):
-        output = ""
+        output = "# Shopping List\n\n"
         for i in self.l.values():
             try:
               this_shop = self.food[i.name]['shop']
@@ -153,7 +155,7 @@ class Ingredients():
                 self.shops[this_shop] = "    [ ] {!s} {!s}\n".format(i.value, i.name)
 
         for shop in self.shops:
-            output +=  "# %s\n" % (shop)
+            output +=  "## %s\n" % (shop)
             output += self.shops[shop] + "\n"
 
         return output
@@ -190,41 +192,44 @@ for item in menu:
             people = int(menu[item][day])
             if day == 'people':
                 day = 'All'
-            mdname = os.path.basename(day+'_'+item + ".md")
+            mdname = day+'_'+os.path.basename(item + ".md")
 
             f = open(folderName + mdname, "w")
             f.write("# {!s} {!s}\n".format(day, recipe['name']))
             f.write("\n")
 
             # DO we have serves?
-            serves = float(1)
-            try:
+            if 'serves' in recipe:
                 serves = float(recipe['serves'])
                 f.write("### Serves: {!s}\n".format(people))
                 f.write("\n")
-            except:
-                pass
+            else:
+                serves = float(1)
 
             f.write("### Ingredients: \n")
             f.write("\n")
-            for ingredient in recipe['ingredients']:
+            for ingredient in sorted(recipe['ingredients']):
                 amount = recipe['ingredients'][ingredient]
                 (number, unit) = amount_units(amount)
                 number = float(number) / serves
                 f.write("%28s: %8.2f %s\n" % (ingredient, float(number) * people, unit))
                 ingredients.add(ingredient, float(number) * people, unit)
 
-    try:
-        f.write("### Description\n")
-        f.write(recipe['method'])#.encode('utf-8'))
-        f.write("\n")
-    except KeyError:
-        pass
-
-    f.close()
+            if 'method' in recipe:
+                f.write("### Description\n")
+                f.write(recipe['method'])#.encode('utf-8'))
+                f.write("\n")
+            
+            f.write("\n\pagebreak")
+            f.close()
 
 outfile = open(folderName + "shoppinglist.md", "w")
 outfile.write(ingredients.all_byshop())
+outfile.write('\pagebreak')
 outfile.close()
+
+if compile_pandoc:
+    # print('not implemented yet')
+    os.system("pandoc {!s}* --pdf-engine=xelatex -o {!s}All_Recipe.pdf".format(folderName,folderName))
 
 

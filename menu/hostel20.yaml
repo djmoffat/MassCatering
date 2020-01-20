@@ -1,6 +1,6 @@
 # General
 hostel:
-    people: 51
+    people: 1
 
 hostel_by_people:
     Thursday: 35
@@ -42,7 +42,7 @@ mexican_chilli:
     Friday: 40
 vegan_chilli:
     Friday: 6
-kids_dinner_friday: 10 unit
+kids_dinner_Friday: 10 unit
 
 aubergine_and_chicken_curry: 
     Saturday: 15
@@ -61,7 +61,5 @@ roast_dinner:
     Sunday: 25
 vegan_roast: 
     Sunday: 4
-mash: 
-    Sunday: 25
 kids_dinner_Sunday: 10 unit
 

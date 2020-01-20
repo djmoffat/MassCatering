@@ -11,6 +11,7 @@ python compile_menu.py menu/weekend.yaml
 ```
 
 
+Compile md to pdf requires pandoc and latex installations.
 
 
 # Required modules
