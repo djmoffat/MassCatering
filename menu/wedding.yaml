@@ -3,14 +3,10 @@ wedding_by_people:
     people: 53
 wedding:
     people: 53
+fruit_salad:
+    people: 50
 
 # Friday
-mexican_chilli:
-    people: 46
-vegan_chilli: 
-    people: 5
-rice: 
-    people: 53
 
 # Saturday
 breakfast:
@@ -26,15 +22,6 @@ veggie_breakfast:
     people: 8
 avocado: 8 units
 
-soups/squash_and_chickpea_soup:
-    people: 40
-soups/veg_and_lentil_soup:
-    people: 40
-
-haggis:
-    people: 46
-fruit_salad:
-    people: 46
 ice_cream: 6l
 
 # Monday
