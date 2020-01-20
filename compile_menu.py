@@ -119,23 +119,26 @@ class Ingredients():
     equi['celery'] = ['celery_sticks']
     equi['carrots'] = ['carrot']
     equi['garlic_cloves'] = ['garlic']
+    equi['garlic_cloves'] = ['garlic_clove']
+    equi['tomato'] = ['tomatoes']
+
 
     def __init__(self):
-        self.l = dict()
+        self.list = dict()
 
     def add(self, ingredient, value, unit):
         ingredient = self.equivalent_check(ingredient)
-        if ingredient in self.l.keys():
+        if ingredient in self.list:
             #try:
-            a = self.l[ingredient]
+            a = self.list[ingredient]
             print("Adding %s %s: %s" % (value, unit, ingredient))
             a.add(value, unit)
-            self.l[ingredient] = a
+            self.list[ingredient] = a
         else:
-            self.l[ingredient] = Ingredient(ingredient, value, unit)
+            self.list[ingredient] = Ingredient(ingredient, value, unit)
 
     def equivalent_check(self, ingredient):
-        for equivalent in self.equi.keys():
+        for equivalent in self.equi:
             if ingredient in self.equi[equivalent]:
                 return equivalent
 
@@ -143,16 +146,17 @@ class Ingredients():
 
     def all_byshop(self):
         output = "# Shopping List\n\n"
-        for i in self.l.values():
+        for item_ in sorted(self.list):
+            item = self.list[item_]
             try:
-              this_shop = self.food[i.name]['shop']
+              this_shop = self.food[item.name]['shop']
             except KeyError:
                 this_shop = self.default_shop
 
             if this_shop in self.shops:
-                self.shops[this_shop] = self.shops[this_shop] + "    [ ] {!s} {!s}\n".format(round(i.value,2), i.name)
+                self.shops[this_shop] = self.shops[this_shop] + "    [ ] {!s} {!s}\n".format(round(item.value,2), item.name)
             else:
-                self.shops[this_shop] = "    [ ] {!s} {!s}\n".format(i.value, i.name)
+                self.shops[this_shop] = "    [ ] {!s} {!s}\n".format(item.value, item.name)
 
         for shop in self.shops:
             output +=  "## %s\n" % (shop)
@@ -181,6 +185,8 @@ for item in menu:
         print("Can't open %s as recipe... trying as single ingredient" % item)
         (number, unit) = amount_units(menu[item])
         # pdb.set_trace()
+        if unit == '':
+            unit = 'unit'
         print("%20s: %8.2f %s" % (item, float(number), unit))
         ingredients.add(item, float(number), unit)
         print("skip ingredients")
@@ -208,7 +214,7 @@ for item in menu:
 
             f.write("### Ingredients: \n")
             f.write("\n")
-            for ingredient in sorted(recipe['ingredients']):
+            for ingredient in recipe['ingredients']:
                 amount = recipe['ingredients'][ingredient]
                 (number, unit) = amount_units(amount)
                 number = float(number) / serves
@@ -230,6 +236,6 @@ outfile.close()
 
 if compile_pandoc:
     # print('not implemented yet')
-    os.system("pandoc {!s}* --pdf-engine=xelatex -o {!s}All_Recipe.pdf".format(folderName,folderName))
+    os.system("pandoc {!s}*.md --pdf-engine=xelatex -o {!s}All_Recipe.pdf".format(folderName,folderName))
 
 
