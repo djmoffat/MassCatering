@@ -148,7 +148,7 @@ class Ingredients():
                 this_shop = self.default_shop
 
             if this_shop in self.shops:
-                self.shops[this_shop] = self.shops[this_shop] + "    [ ] {0:.2f} {!s}\n".format(i.value, i.name)
+                self.shops[this_shop] = self.shops[this_shop] + "    [ ] {!s} {!s}\n".format(round(i.value,2), i.name)
             else:
                 self.shops[this_shop] = "    [ ] {!s} {!s}\n".format(i.value, i.name)
 
@@ -167,11 +167,11 @@ folderName = 'output/' + sys.argv[1].split('/')[-1].split('.')[0] + '/'
 for item in menu:
     skip = False
     try:
-        if 'people' not in menu[item]: #Assume listing days, rather than just people
-            menu[item]['people'] = 0
-            for day in menu[item]:
-                menu[item]['people'] += int(menu[item][day])
-        people = int(menu[item]['people'])
+        # if 'people' not in menu[item]: #Assume listing days, rather than just people
+        #     menu[item]['people'] = 0
+        #     for day in menu[item]:
+        #         menu[item]['people'] += int(menu[item][day])
+        # people = int(menu[item]['people'])
         file = "recipe/" + item + ".yaml"
         recipe = open_yaml(file)
     except:
@@ -186,28 +186,36 @@ for item in menu:
         continue
 
     if not skip:
-        mdname = os.path.basename(item + ".md")
+        for day in menu[item]:
+            people = int(menu[item][day])
+            if day == 'people':
+                day = 'All'
+            mdname = os.path.basename(day+'_'+item + ".md")
 
-        f = open(folderName + mdname, "w")
-        f.write("# {!s}\n".format(recipe['name']))
-        f.write("\n")
+            f = open(folderName + mdname, "w")
+            f.write("# {!s} {!s}\n".format(day, recipe['name']))
+            f.write("\n")
 
-        # DO we have serves?
-        serves = float(1)
-        try:
-            serves = float(recipe['serves'])
-        except:
-            pass
+            # DO we have serves?
+            serves = float(1)
+            try:
+                serves = float(recipe['serves'])
+                f.write("### Serves: {!s}\n".format(people))
+                f.write("\n")
+            except:
+                pass
 
-        for ingredient in recipe['ingredients']:
-            amount = recipe['ingredients'][ingredient]
-            (number, unit) = amount_units(amount)
-            number = float(number) / serves
-            f.write("%28s: %8.2f %s\n" % (ingredient, float(number) * people, unit))
-            ingredients.add(ingredient, float(number) * people, unit)
+            f.write("### Ingredients: \n")
+            f.write("\n")
+            for ingredient in recipe['ingredients']:
+                amount = recipe['ingredients'][ingredient]
+                (number, unit) = amount_units(amount)
+                number = float(number) / serves
+                f.write("%28s: %8.2f %s\n" % (ingredient, float(number) * people, unit))
+                ingredients.add(ingredient, float(number) * people, unit)
 
     try:
-        f.write("## Description\n")
+        f.write("### Description\n")
         f.write(recipe['method'])#.encode('utf-8'))
         f.write("\n")
     except KeyError:
