@@ -1,0 +1,67 @@
+# General
+hostel:
+    people: 51
+
+hostel_by_people:
+    Thursday: 35
+    Friday: 45
+    Saturday: 50
+    Sunday: 50
+    Monday: 15
+
+# Breakfast
+breakfast:
+    Friday: 20
+    Saturday: 20
+    Sunday: 20
+    Monday: 10
+cooked_breakfast:
+    Saturday: 35
+    Sunday: 50
+veggie_breakfast:
+    Saturday: 6
+    Sunday: 6
+
+
+# Lunch
+packed_lunch:
+    Friday: 45
+    Saturday: 50
+    Sunday: 50
+    Monday: 15
+
+# Dinner
+soups/chickpea_leek_soup: 
+    Thursday: 10
+soups/sweet_potato_coconut_and_cardamon_soup: 
+    Thursday: 10
+jacket_potato: 20 unit
+bread: 20 unit
+
+mexican_chilli:
+    Friday: 40
+vegan_chilli:
+    Friday: 6
+kids_dinner_friday: 10 unit
+
+aubergine_and_chicken_curry: 
+    Saturday: 15
+tarka_daal: 
+    Saturday: 15
+sweet_potato_chickpea_spinach_curry: 
+    Saturday: 15
+rice: 
+    Saturday: 45
+naan: 12 unit
+lime_pickle: 1 unit
+mango_chutney: 1 unit
+kids_dinner_Saturday: 10 unit
+
+roast_dinner: 
+    Sunday: 25
+vegan_roast: 
+    Sunday: 4
+mash: 
+    Sunday: 25
+kids_dinner_Sunday: 10 unit
+
