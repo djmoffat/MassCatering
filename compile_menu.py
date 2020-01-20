@@ -148,7 +148,7 @@ class Ingredients():
                 this_shop = self.default_shop
 
             if this_shop in self.shops:
-                self.shops[this_shop] = self.shops[this_shop] + "    [ ] {!s} {!s}\n".format(i.value, i.name)
+                self.shops[this_shop] = self.shops[this_shop] + "    [ ] {0:.2f} {!s}\n".format(i.value, i.name)
             else:
                 self.shops[this_shop] = "    [ ] {!s} {!s}\n".format(i.value, i.name)
 
