@@ -35,14 +35,14 @@ soups/chickpea_leek_soup:
     Thursday: 10
 soups/sweet_potato_coconut_and_cardamon_soup: 
     Thursday: 10
-jacket_potato: 20 unit
-bread: 20 unit
+jacket_potato: 20
+bread: 20
 
 mexican_chilli:
     Friday: 40
 vegan_chilli:
     Friday: 6
-kids_dinner_Friday: 10 unit
+kids_dinner_Friday: 10
 
 aubergine_and_chicken_curry: 
     Saturday: 15
@@ -51,15 +51,16 @@ tarka_daal:
 sweet_potato_chickpea_spinach_curry: 
     Saturday: 15
 rice: 
+    Friday: 40
     Saturday: 45
-naan: 12 unit
-lime_pickle: 1 unit
-mango_chutney: 1 unit
-kids_dinner_Saturday: 10 unit
+naan: 30 
+lime_pickle: 1 
+mango_chutney: 1 
+kids_dinner_Saturday: 10
 
 roast_dinner: 
     Sunday: 25
 vegan_roast: 
     Sunday: 4
-kids_dinner_Sunday: 10 unit
+kids_dinner_Sunday: 10
 
