@@ -1,271 +1,290 @@
 food_colouring:
-    shop: Tesco
+    shop: Supermarket
+    unit: g
+kidney_beans:
+    shop: Supermarket
     unit: g
 button_mushroom:
-    shop: Tesco
+    shop: Supermarket
 sunflower_oil:
-    shop: Tesco
+    shop: Supermarket
 mince:
     shop: Butchers
+pork_mince:
+    shop: Butchers
+beef_mince:
+    shop: Butchers
+sausages:
+    shop: Butchers
+bacon:
+    shop: Butchers
+haggis:
+    shop: Butchers
+veggie_haggis:
+    shop: Butchers
 corriander_seeds:
-    shop: Local
+    shop: Supermarket
 chickpea:
-    shop: Sainsburys
+    shop: Supermarket
 raspberry_jam:
-    shop: Tesco
+    shop: Supermarket
 parmesan:
-    shop: Cosco
+    shop: Supermarket
 milk:
-    shop: Tesco
+    shop: Supermarket
 wholewheat_flour:
-    shop: Tesco
+    shop: Supermarket
 single_cream:
-    shop: Cosco
+    shop: Supermarket
 cayenne:
-    shop: Local
+    shop: Supermarket
 celery:
-    shop: Tesco
+    shop: Supermarket
 jam:
-    shop: Tesco
+    shop: Supermarket
 baking_powder:
-    shop: Tesco
+    shop: Supermarket
 cornflower:
-    shop: Home
+    shop: Supermarket
 aubergine:
-    shop: Sainsburys
+    shop: Supermarket
 vanilla_essence:
-    shop: Tesco
+    shop: Supermarket
 mayo:
-    shop: Tesco
+    shop: Supermarket
 suet:
-    shop: Tesco
+    shop: Supermarket
 stout:
-    shop: Sainsburys
+    shop: Supermarket
 mustard_seeds:
-    shop: Local
+    shop: Supermarket
 white_wine:
-    shop: Sainsburys
+    shop: Supermarket
 ketchup:
-    shop: Cosco
+    shop: Supermarket
 tinned_tomato:
-    shop: Tesco
+    shop: Supermarket
 tomato_puree:
-    shop: Tesco
+    shop: Supermarket
 bread:
-    shop: Tesco
+    shop: Supermarket
 white_vinegar:
-    shop: Sainsburys
+    shop: Supermarket
 thyme_sprig:
-    shop: Global
+    shop: Supermarket
 OJ:
-    shop: Tesco
+    shop: Supermarket
 onion:
-    shop: Tesco
+    shop: Supermarket
 lettuce:
-    shop: Tesco
+    shop: Supermarket
 cumin:
-    shop: Local
+    shop: Supermarket
 roll:
-    shop: Tesco
+    shop: Supermarket
 egg_large:
-    shop: Tesco
+    shop: Supermarket
 nutmeg:
-    shop: Tesco
+    shop: Supermarket
 beef_stock:
-    shop: Tesco
+    shop: Supermarket
 chilli_powder:
-    shop: Home
+    shop: Supermarket
 tomato_paste:
-    shop: Tesco
+    shop: Supermarket
 rice_crispies:
-    shop: Tesco
+    shop: Supermarket
 pepper:
-    shop: Cosco
+    shop: Supermarket
 marmalade:
-    shop: Tesco
+    shop: Supermarket
 turnip:
-    shop: Tesco
+    shop: Supermarket
 rosemary:
-    shop: Global
+    shop: Supermarket
 red_onion:
-    shop: Sainsburys
+    shop: Supermarket
 cayenne_pepper:
-    shop: Local
+    shop: Supermarket
 coconut_milk:
-    shop: Sainsburys
+    shop: Supermarket
 icing_sugar:
-    shop: Tesco
+    shop: Supermarket
 porridge:
-    shop: Tesco
+    shop: Supermarket
 plain_flour:
-    shop: Tesco
+    shop: Supermarket
 digestives:
-    shop: Tesco
+    shop: Supermarket
 tumeric:
-    shop: Home
+    shop: Supermarket
 mustard_powder:
-    shop: Sainsburys
+    shop: Supermarket
 selfraising_flour:
-    shop: Tesco
+    shop: Supermarket
 veg_stock:
-    shop: Real Foods
+    shop: Supermarket
 corriander:
-    shop: Global
+    shop: Supermarket
 bay_leaf:
-    shop: Home
+    shop: Supermarket
 califlower:
-    shop: Sainsburys
+    shop: Supermarket
 caramel_can:
-    shop: Tesco
+    shop: Supermarket
 cheddar_cheese:
-    shop: Cosco
+    shop: Supermarket
 portobello_mushrooms:
-    shop: Tesco
+    shop: Supermarket
 apple:
-    shop: Tesco
+    shop: Supermarket
+orange:
+    shop: Supermarket
 weetabix:
-    shop: Tesco
+    shop: Supermarket
 gerkins:
-    shop: Tesco
+    shop: Supermarket
 fresh_corriander:
-    shop: Global
+    shop: Supermarket
 rolls:
-    shop: Tesco
+    shop: Supermarket
 balsamic:
-    shop: Tesco
+    shop: Supermarket
 parsley:
-    shop: Global
+    shop: Supermarket
 parsnip:
-    shop: Tesco
+    shop: Supermarket
 beef_shin:
     shop: Butchers
 banana:
-    shop: Tesco
+    shop: Supermarket
 caster_sugar:
-    shop: Tesco
+    shop: Supermarket
 butter:
-    shop: Cosco
+    shop: Supermarket
 chocolate:
     shop: Lidl
 rice:
-    shop: Sainsburys
+    shop: Supermarket
 syrup:
-    shop: Tesco
+    shop: Supermarket
 paprika:
-    shop: Local
+    shop: Supermarket
 self_raising_flour:
-    shop: Tesco
+    shop: Supermarket
 olive_oil:
-    shop: Cosco
+    shop: Supermarket
 onion_seeds:
-    shop: Local
+    shop: Supermarket
 ginger:
-    shop: Global
+    shop: Supermarket
 carrot:
-    shop: Tesco
+    shop: Supermarket
 cornflakes:
-    shop: Tesco
+    shop: Supermarket
 dried_chickpea:
-    shop: Real Foods
+    shop: Supermarket
 lemon:
-    shop: Tesco
+    shop: Supermarket
 vege_burger:
-    shop: Tesco
+    shop: Supermarket
 leek:
-    shop: Tesco
+    shop: Supermarket
 stock:
-    shop: Real Foods
+    shop: Supermarket
 fenugreek:
-    shop: Local
+    shop: Supermarket
 mustard:
-    shop: Costco
+    shop: Supermarket
 tinned_tomatoe:
-    shop: Sainsburys
+    shop: Supermarket
 garlic_clove:
-    shop: Tesco
+    shop: Supermarket
 red_chilli:
-    shop: Sainsburys
+    shop: Supermarket
 tomato:
-    shop: Tesco
+    shop: Supermarket
 potato:
-    shop: Tesco
+    shop: Supermarket
 indian_breads:
-    shop: Local
+    shop: Supermarket
 salt:
-    shop: Cosco
+    shop: Supermarket
 tea_bags:
-    shop: Cosco
+    shop: Supermarket
 coffee:
-    shop: Cosco
+    shop: Supermarket
 hot_chocolate:
-    shop: Cosco
+    shop: Supermarket
 sugar:
-    shop: Tesco
+    shop: Supermarket
 milk:
-    shop: Tesco
+    shop: Supermarket
 squash:
-    shop: Tesco
+    shop: Supermarket
 double_cream:
-    shop: Costco
+    shop: Supermarket
 tin_foil:
-    shop: Tesco
+    shop: Supermarket
 cling_film:
-    shop: Tesco
+    shop: Supermarket
 olive_oil:
-    shop: Cosco
+    shop: Supermarket
 sunflower_oil:
-    shop: Cosco
+    shop: Supermarket
 marshmallows:
-    shop: Cosco
+    shop: Supermarket
 kids_yogurts:
-    shop: Tesco
+    shop: Supermarket
 full_fat_milk:
-    shop: Tesco
+    shop: Supermarket
 green_chilli:
-    shop: Global
+    shop: Supermarket
 sweet_potato:
-    shop: Tesco
+    shop: Supermarket
 tin_coconut_milk:
-    shop: Tesco
+    shop: Supermarket
 crisps:
-    shop: Tesco
+    shop: Supermarket
 cardamon:
-    shop: Local
+    shop: Supermarket
 frozen_peas:
-    shop: Tesco
+    shop: Supermarket
 garlic_cloves:
-    shop: Tesco
+    shop: Supermarket
 hummous:
-    shop: Tesco
+    shop: Supermarket
 cucumber:
-    shop: Tesco
+    shop: Supermarket
 gluten_free_option_1:
-    shop: Real Foods
+    shop: Supermarket
 gluten_free_option_2:
-    shop: Real Foods
+    shop: Supermarket
 gluten_free_option_3:
-    shop: Real Foods
+    shop: Supermarket
 egg_dairy_free_opt1:
-    shop: Real Foods
+    shop: Supermarket
 egg_dairy_free_opt2:
-    shop: Real Foods
+    shop: Supermarket
 egg_dairy_free_opt3:
-    shop: Real Foods
+    shop: Supermarket
 melon:
-    shop: Tesco
+    shop: Supermarket
 grape:
-    shop: Tesco
+    shop: Supermarket
 oranges:
-    shop: Tesco
+    shop: Supermarket
 pineapple:
-    shop: Tesco
+    shop: Supermarket
 mango:
-    shop: Tesco
+    shop: Supermarket
 gluten_free_roll:
-    shop: Tesco
+    shop: Supermarket
 glace:
-    shop: Tesco
+    shop: Supermarket
 ice_cream:
-    shop: Tesco
+    shop: Supermarket
 seitan:
     shop: Real Foods
+water:
+    shop: General

@@ -1,9 +1,10 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 
 import yaml
 import re
 import sys
 import os
+import pdb
 from pint import UnitRegistry
 
 ureg = UnitRegistry()
@@ -38,7 +39,7 @@ def open_yaml(file):
     with open(file, 'r') as stream:
         try:
             data = yaml.load(stream)
-            print(data)
+            # print(data)
         except yaml.YAMLError as exc:
             print(exc)
     return data
@@ -90,14 +91,14 @@ class Ingredient():
         if len(unit) > 0:
             self.value = value * ureg.parse_expression(unit)
         else:
-            print "using " + name + " as unit"
+            print("using " + name + " as unit")
             self.value = value * ureg.parse_expression(name)
 
     def add(self, value, unit):
         if len(unit) > 0:
             self.value = self.value + (value * ureg.parse_expression(unit))
         else:
-            print "using " + self.name + " as unit"
+            print("using " + self.name + " as unit")
             self.value = self.value + (value * ureg.parse_expression(self.name))
 
     def pr(self):
@@ -125,7 +126,7 @@ class Ingredients():
         if ingredient in self.l.keys():
             #try:
             a = self.l[ingredient]
-            print "Adding %s %s:" % (value, unit)
+            print("Adding %s %s: %s" % (value, unit, ingredient))
             a.add(value, unit)
             self.l[ingredient] = a
         else:
@@ -161,21 +162,26 @@ class Ingredients():
 ingredients = Ingredients()
 menu = open_yaml(sys.argv[1])
 folderName = 'output/' + sys.argv[1].split('/')[-1].split('.')[0] + '/'
-os.mkdir(folderName)
+# os.mkdir(folderName)
+# pdb.set_trace()
 for item in menu:
     skip = False
     try:
+        if 'people' not in menu[item]: #Assume listing days, rather than just people
+            menu[item]['people'] = 0
+            for day in menu[item]:
+                menu[item]['people'] += int(menu[item][day])
         people = int(menu[item]['people'])
-
         file = "recipe/" + item + ".yaml"
         recipe = open_yaml(file)
     except:
         # not very elegant
-        print "Can't open %s as recipe... trying as single ingredient" % item
+        print("Can't open %s as recipe... trying as single ingredient" % item)
         (number, unit) = amount_units(menu[item])
-        print "%20s: %8.2f %s" % (item, float(number), unit)
+        # pdb.set_trace()
+        print("%20s: %8.2f %s" % (item, float(number), unit))
         ingredients.add(item, float(number), unit)
-        print "skip ingredients"
+        print("skip ingredients")
         skip = True
         continue
 
@@ -202,7 +208,7 @@ for item in menu:
 
     try:
         f.write("## Description\n")
-        f.write(recipe['method'].encode('utf-8'))
+        f.write(recipe['method'])#.encode('utf-8'))
         f.write("\n")
     except KeyError:
         pass
