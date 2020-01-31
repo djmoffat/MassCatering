@@ -8,13 +8,19 @@ button_mushroom:
     shop: Supermarket
 sunflower_oil:
     shop: Supermarket
+pork_belly:
+    shop: Butchers
 mince:
     shop: Butchers
 pork_mince:
     shop: Butchers
 beef_mince:
     shop: Butchers
+black_pudding:
+    shop: Butchers
 sausages:
+    shop: Butchers
+chipolata_sausage:
     shop: Butchers
 bacon:
     shop: Butchers
@@ -90,11 +96,11 @@ beef_stock:
     shop: Supermarket
 chilli_powder:
     shop: Supermarket
-tomato_paste:
-    shop: Supermarket
 rice_crispies:
     shop: Supermarket
 pepper:
+    shop: Supermarket
+red_pepper:
     shop: Supermarket
 marmalade:
     shop: Supermarket
@@ -196,13 +202,13 @@ fenugreek:
     shop: Supermarket
 mustard:
     shop: Supermarket
-tinned_tomatoe:
-    shop: Supermarket
 garlic_clove:
     shop: Supermarket
 red_chilli:
     shop: Supermarket
 tomato:
+    shop: Supermarket
+cherry_tomato:
     shop: Supermarket
 potato:
     shop: Supermarket

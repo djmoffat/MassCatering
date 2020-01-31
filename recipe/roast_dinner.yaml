@@ -1,4 +1,4 @@
-name: Sunday Roast Dinner
+name: Roast Dinner
 serves: 1
 ingredients:
     onion: 0.1 unit
@@ -9,7 +9,7 @@ ingredients:
     pork_belly: 300g
     garlic_cloves: 1
     
-method: 
+method: |
     1. recipe outline for approx budget - but please refine this recipe
     2. Potatoes to be split for half mash and half roast
   
