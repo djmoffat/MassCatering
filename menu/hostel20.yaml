@@ -59,6 +59,8 @@ haggis:
     Saturday: 30    
 kids_pizza:
     Saturday: 10
+chocolate_pudding:
+    Saturday: 40
 
 roast_dinner: 
     Sunday: 25
