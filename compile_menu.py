@@ -32,7 +32,7 @@ ureg.define('large_jar = 800 grams')
 ureg.define('tomato = 62 grams')
 ureg.define('slice = 10 grams')
 ureg.define('potato = 150 grams')
-# ureg.define('unit = 1 grams')
+ureg.define('unit = 1 grams')
 
 
 # 1 tsp smoked paprika = 3.3g
