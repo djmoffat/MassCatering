@@ -31,8 +31,9 @@ ureg.define('lettuce = 400 grams')
 ureg.define('large_jar = 800 grams')
 ureg.define('tomato = 62 grams')
 ureg.define('slice = 10 grams')
-ureg.define('unit = 1 grams')
 ureg.define('potato = 150 grams')
+# ureg.define('unit = 1 grams')
+
 
 # 1 tsp smoked paprika = 3.3g
 # 9 cloves garlic in a bulb
@@ -95,6 +96,7 @@ class Ingredient():
         else:
             print("using " + name + " as unit")
             self.value = value * ureg.parse_expression(name)
+            # self.value = value * ureg.parse_expression('unit')
 
     def add(self, value, unit):
         if len(unit) > 0:
@@ -102,6 +104,7 @@ class Ingredient():
         else:
             print("using " + self.name + " as unit")
             self.value = self.value + (value * ureg.parse_expression(self.name))
+            # self.value = self.value + (value * ureg.parse_expression('unit'))
 
     def pr(self):
         return '{!s}'.format(self.value)
@@ -135,6 +138,7 @@ class Ingredients():
             a.add(value, unit)
             self.list[ingredient] = a
         else:
+            print("Adding %s %s: %s" % (value, unit, ingredient))
             self.list[ingredient] = Ingredient(ingredient, value, unit)
 
     def equivalent_check(self, ingredient):
