@@ -199,6 +199,7 @@ for item in menu:
             if day == 'people':
                 day = 'All'
             mdname = day+'_'+os.path.basename(item + ".md")
+            print(mdname)
 
             f = open(folderName + mdname, "w")
             f.write("# {!s} {!s}\n".format(day, recipe['name']))
@@ -222,9 +223,12 @@ for item in menu:
                 ingredients.add(ingredient, float(number) * people, unit)
 
             if 'method' in recipe:
-                f.write("### Description\n")
-                f.write(recipe['method'])#.encode('utf-8'))
-                f.write("\n")
+                try:
+                    f.write("### Description\n")
+                    f.write(recipe['method'])#.encode('utf-8'))
+                    f.write("\n")
+                except:
+                    pass
             
             f.write("\n\pagebreak")
             f.close()
