@@ -168,6 +168,8 @@ caster_sugar:
     shop: Supermarket
 butter:
     shop: Supermarket
+cinnamon:
+    shop: Supermarket
 chocolate:
     shop: Lidl
 rice:
