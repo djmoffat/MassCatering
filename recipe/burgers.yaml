@@ -1,5 +1,5 @@
 name: Burgers
-servers: 1
+serves: 1
 ingredients:
     mince: 150 g
     onion: 0.5
