@@ -18,9 +18,6 @@ breakfast:
 cooked_breakfast:
     Saturday: 59
     Sunday: 59
-veggie_breakfast:
-    Saturday: 1
-    Sunday: 1
 
 
 # Lunch
@@ -70,8 +67,6 @@ chocolate_pudding:
 
 roast_dinner: 
     Sunday: 19
-vegan_roast: 
-    Sunday: 1
 toad_in_the_hole: 
     Sunday: 12
 
