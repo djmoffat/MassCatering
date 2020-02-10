@@ -1,5 +1,5 @@
 name: Vegetarian Burgers
-servers: 1
+serves: 1
 ingredients:
     vege_burger: 1
     onion: 0.5
