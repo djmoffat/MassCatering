@@ -16,6 +16,8 @@ pork_mince:
     shop: Butchers
 beef_mince:
     shop: Butchers
+lamb_neck:
+    shop: Butchers
 black_pudding:
     shop: Butchers
 sausages:
