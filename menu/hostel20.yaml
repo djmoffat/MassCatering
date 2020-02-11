@@ -4,31 +4,28 @@ hostel:
 
 hostel_by_people:
     Thursday: 19
-    Friday: 54
-    Saturday: 49
-    Sunday: 23
-    Monday: 23
+    Friday: 63
+    Saturday: 63
+    Sunday: 31
+    Monday: 15
 
 # Breakfast
 breakfast:
-    Friday: 7
+    Friday: 19
     Saturday: 24
     Sunday: 24
-    Monday: 12
+    Monday: 31
 cooked_breakfast:
-    Saturday: 59
-    Sunday: 59
-veggie_breakfast:
-    Saturday: 1
-    Sunday: 1
+    Saturday: 63
+    Sunday: 63
 
 
 # Lunch
 packed_lunch:
-    Friday: 59
-    Saturday: 59
-    Sunday: 49
-    Monday: 23
+    Friday: 40
+    Saturday: 63
+    Sunday: 45
+    Monday: 20
 
 # Dinner
 soups/chickpea_leek_soup: 
@@ -41,24 +38,24 @@ hot_dogs: 7
 frozen_chips: 7
 
 haggis:
-    Friday: 35    
+    Friday: 39
 veggie_spaghetti_bolognese:
-    Friday: 22
+    Friday: 24
 
 crumble:
-    Friday: 59
+    Friday: 63
 
 lamb_curry: 
-    Saturday: 18
+    Saturday: 20
 sweet_potato_chickpea_spinach_curry: 
-    Saturday: 18
+    Saturday: 20
 rice: 
-    Saturday: 36
+    Saturday: 39
 raita:
-    Saturday: 36
-naan: 36 
+    Saturday: 39
+naan: 39
 lime_pickle: 1 
-mango_chutney: 1 
+mango_chutney: 2
 
 
 
@@ -66,12 +63,10 @@ kids_pizza:
     Saturday: 24
 
 chocolate_pudding:
-    Saturday: 59
+    Saturday: 64
 
 roast_dinner: 
     Sunday: 19
-vegan_roast: 
-    Sunday: 1
 toad_in_the_hole: 
     Sunday: 12
 
