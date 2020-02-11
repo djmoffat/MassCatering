@@ -32,11 +32,13 @@ packed_lunch:
 
 # Dinner
 soups/chickpea_leek_soup: 
-    Thursday: 10
+    Thursday: 6
 soups/sweet_potato_coconut_and_cardamon_soup: 
-    Thursday: 10
-jacket_potato: 20
+    Thursday: 6
+jacket_potato: 12
 baguette: 4 unit
+hot_dogs: 7
+frozen_chips: 7
 
 haggis:
     Friday: 35    
