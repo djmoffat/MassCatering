@@ -191,6 +191,8 @@ for item in menu:
             mdname = day+'_'+os.path.basename(item + ".md")
             print(mdname)
 
+            os.makedirs(folderName, exist_ok = True)
+
             f = open(folderName + mdname, "w")
             f.write("# {!s} {!s}\n".format(day, recipe['name']))
             f.write("\n")
