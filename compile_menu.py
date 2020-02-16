@@ -63,26 +63,22 @@ def open_yaml(file):
 
 
 def amount_units(string):
+    """
+    Extract amount and unit from string and return a tuple of strings.
+    >>> amount_units("0.4")
+    ('0.4', '')
+    >>> amount_units(".3 g")
+    ('.3', 'g')
+    >>> amount_units("50ml")
+    ('50', 'ml')
+    >>> amount_units("3.3 g")
+    ('3.3', 'g')
+    """
     regex = r"(?P<number>\d+(\.\d+)?|(\.\d+)?)\s*(?P<unit>[a-zA-Z_]*)"
-
-    test_str = ("0.4\n"
-	".3 g\n"
-	"0.3 g\n"
-	"0.17\n"
-	"0.3\n"
-	"0.3\n"
-	"0.2\n"
-	"50ml\n"
-	"50ml\n"
-	"3.3 g\n"
-	"5g")
     matches = re.match(regex, str(string))
     gd = matches.groupdict()
-
     return (gd['number'], gd['unit'])
 
-
-toget = dict()
 
 class Ingredient():
     """A Class to store ingredients - hopefully also do unit conversions 
