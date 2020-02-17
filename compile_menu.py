@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 import yaml
 import re
@@ -6,6 +6,7 @@ import sys
 import os
 import pdb
 from pint import UnitRegistry
+from argparse import ArgumentParser
 
 compile_pandoc = True
 
@@ -35,6 +36,19 @@ ureg.define('potato = 150 grams')
 ureg.define('unit = 1 grams')
 
 
+def get_args():
+    """
+    Read the arguments and return them to main.
+    """
+    parser = ArgumentParser(description="Compile a menu and calculate "
+                            "the required quantities.")
+    parser.add_argument('menu', nargs='?',
+                        help="YAML file describing menu.")
+    parser.add_argument('-o', '--output', default="output",
+                        help="Output directory")
+
+    return parser.parse_args()
+
 # 1 tsp smoked paprika = 3.3g
 # 9 cloves garlic in a bulb
 
@@ -46,42 +60,25 @@ def open_yaml(file):
         except yaml.YAMLError as exc:
             print(exc)
     return data
-    
+
+
 def amount_units(string):
+    """
+    Extract amount and unit from string and return a tuple of strings.
+    >>> amount_units("0.4")
+    ('0.4', '')
+    >>> amount_units(".3 g")
+    ('.3', 'g')
+    >>> amount_units("50ml")
+    ('50', 'ml')
+    >>> amount_units("3.3 g")
+    ('3.3', 'g')
+    """
     regex = r"(?P<number>\d+(\.\d+)?|(\.\d+)?)\s*(?P<unit>[a-zA-Z_]*)"
-
-    test_str = ("0.4\n"
-	".3 g\n"
-	"0.3 g\n"
-	"0.17\n"
-	"0.3\n"
-	"0.3\n"
-	"0.2\n"
-	"50ml\n"
-	"50ml\n"
-	"3.3 g\n"
-	"5g")
-#    try:
     matches = re.match(regex, str(string))
-#    except:
-#        import pdb; pdb.set_trace()
-
-#    for matchNum, match in enumerate(matches):
-#	matchNum = matchNum + 1
-#	
-#	print ("Match {matchNum} was found at {start}-{end}: {match}".format(matchNum = matchNum, start = match.start(), end = match.end(), match = match.group()))
-#	
-#	for groupNum in range(0, len(match.groups())):
-#	    groupNum = groupNum + 1
-#	    
-#	    print ("Group {groupNum} found at {start}-{end}: {group}".format(groupNum = groupNum, start = match.start(groupNum), end = match.end(groupNum), group = match.group(groupNum)))
-    
     gd = matches.groupdict()
-
     return (gd['number'], gd['unit'])
 
-
-toget = dict()
 
 class Ingredient():
     """A Class to store ingredients - hopefully also do unit conversions 
@@ -169,81 +166,87 @@ class Ingredients():
         return output
 
 
-ingredients = Ingredients()
-menu = open_yaml(sys.argv[1])
-folderName = 'output/' + sys.argv[1].split('/')[-1].split('.')[0] + '/'
-# os.mkdir(folderName)
-# pdb.set_trace()
-for item in menu:
-    skip = False
-    try:
-        # if 'people' not in menu[item]: #Assume listing days, rather than just people
-        #     menu[item]['people'] = 0
-        #     for day in menu[item]:
-        #         menu[item]['people'] += int(menu[item][day])
-        # people = int(menu[item]['people'])
-        file = "recipe/" + item + ".yaml"
-        recipe = open_yaml(file)
-    except:
-        # not very elegant
-        print("Can't open %s as recipe... trying as single ingredient" % item)
-        (number, unit) = amount_units(menu[item])
-        # pdb.set_trace()
-        if unit == '':
-            unit = 'unit'
-        print("%20s: %8.2f %s" % (item, float(number), unit))
-        ingredients.add(item, float(number), unit)
-        print("skip ingredients")
-        skip = True
-        continue
+def process_menu(menu_yaml, outdir):
+    ingredients = Ingredients()
+    menu = open_yaml(menu_yaml)
+    folderName = 'output/' + os.path.splitext(os.path.basename(menu_yaml))[0]
 
-    if not skip:
-        for day in menu[item]:
-            people = int(menu[item][day])
-            if day == 'people':
-                day = 'All'
-            mdname = day+'_'+os.path.basename(item + ".md")
-            print(mdname)
+    for item in menu:
+        skip = False
+        try:
+            # if 'people' not in menu[item]: #Assume listing days, rather than just people
+            #     menu[item]['people'] = 0
+            #     for day in menu[item]:
+            #         menu[item]['people'] += int(menu[item][day])
+            # people = int(menu[item]['people'])
+            file = "recipe/" + item + ".yaml"
+            recipe = open_yaml(file)
+        except:
+            # not very elegant
+            print("Can't open %s as recipe... trying as single ingredient" % item)
+            (number, unit) = amount_units(menu[item])
+            # pdb.set_trace()
+            if unit == '':
+                unit = 'unit'
 
-            f = open(folderName + mdname, "w")
-            f.write("# {!s} {!s}\n".format(day, recipe['name']))
-            f.write("\n")
+            print("%20s: %8.2f %s" % (item, float(number), unit))
+            ingredients.add(item, float(number), unit)
+            print("skip ingredients")
+            skip = True
+            continue
 
-            # DO we have serves?
-            if 'serves' in recipe:
-                serves = float(recipe['serves'])
-                f.write("### Serves: {!s}\n".format(people))
+        if not skip:
+            for day in menu[item]:
+                people = int(menu[item][day])
+                if day == 'people':
+                    day = 'All'
+                    mdname = day+'_'+os.path.basename(item + ".md")
+                    print(mdname)
+
+                os.makedirs(folderName, exist_ok = True)
+
+                f = open(folderName + mdname, "w")
+                f.write("# {!s} {!s}\n".format(day, recipe['name']))
                 f.write("\n")
-            else:
-                serves = float(1)
 
-            f.write("### Ingredients: \n")
-            f.write("\n")
-            for ingredient in recipe['ingredients']:
-                amount = recipe['ingredients'][ingredient]
-                (number, unit) = amount_units(amount)
-                number = float(number) / serves
-                f.write("%28s: %8.2f %s\n" % (ingredient, float(number) * people, unit))
-                ingredients.add(ingredient, float(number) * people, unit)
-
-            if 'method' in recipe:
-                try:
-                    f.write("### Description\n")
-                    f.write(recipe['method'])#.encode('utf-8'))
+                # DO we have serves?
+                if 'serves' in recipe:
+                    serves = float(recipe['serves'])
+                    f.write("### Serves: {!s}\n".format(people))
                     f.write("\n")
-                except:
-                    pass
-            
-            f.write("\n\pagebreak")
-            f.close()
+                else:
+                    serves = float(1)
 
-outfile = open(folderName + "shoppinglist.md", "w")
-outfile.write(ingredients.all_byshop())
-outfile.write('\pagebreak')
-outfile.close()
+                f.write("### Ingredients: \n")
+                f.write("\n")
+                for ingredient in recipe['ingredients']:
+                    amount = recipe['ingredients'][ingredient]
+                    (number, unit) = amount_units(amount)
+                    number = float(number) / serves
+                    f.write("%28s: %8.2f %s\n" % (ingredient, float(number) * people, unit))
+                    ingredients.add(ingredient, float(number) * people, unit)
 
-if compile_pandoc:
-    # print('not implemented yet')
-    os.system("pandoc {!s}*.md --pdf-engine=xelatex -o {!s}All_Recipe.pdf".format(folderName,folderName))
+                if 'method' in recipe:
+                    try:
+                        f.write("### Description\n")
+                        f.write(recipe['method'])#.encode('utf-8'))
+                        f.write("\n")
+                    except:
+                        pass
+
+                f.write("\n\pagebreak")
+                f.close()
+
+    outfile = open(folderName + "shoppinglist.md", "w")
+    outfile.write(ingredients.all_byshop())
+    outfile.write('\pagebreak')
+    outfile.close()
+
+    if compile_pandoc:
+        # print('not implemented yet')
+        os.system("pandoc {!s}*.md --pdf-engine=xelatex -o {!s}All_Recipe.pdf".format(folderName,folderName))
 
 
+if __name__ == "__main__":
+    args = get_args()
+    process_menu(args.menu, args.output)

@@ -34,8 +34,8 @@ soups/sweet_potato_coconut_and_cardamon_soup:
     Thursday: 6
 jacket_potato: 12
 baguette: 4 unit
-hotdogs:
-    Thursday: 10
+# hotdogs:
+#     Thursday: 10
 
 haggis:
     Friday: 39
