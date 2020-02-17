@@ -54,8 +54,7 @@ def get_args():
 def open_yaml(file):
     with open(file, 'r') as stream:
         try:
-            data = yaml.load(stream)
-            # print(data)
+            data = yaml.load(stream, Loader=yaml.SafeLoader)
         except yaml.YAMLError as exc:
             print(exc)
     return data
