@@ -1,22 +1,22 @@
 name: Packed Lunch
 serves: 1
 ingredients:
-    banana: 0.6
-    apple: 0.6
-    orange: 0.4 unit
+    banana: 0.3
+    apple: 0.3
+    orange: 0.3 unit
     roll: 1
-    bread: 1.5 slices
-    ham: 20g
+    bread: 1 slices
+    ham: 10g
     tuna: 0.1 can
-    mayonnaise: 10g
+    mayonnaise: 5g
     hummus: 5g
-    butter: 5g
-    cheese: 20g
-    lettuce: 0.1
+    butter: 3g
+    cheese: 15g
+    lettuce: 0.05
     tomato: 0.3
-    cucumber: 0.1 unit
+    cucumber: 0.075 unit
     crisps: 1 unit
-    biscuit: 1.2 unit
+    biscuit: 1 unit
     sandwich_bag: 1 unit
-    fromage_frais: 1 unit
+    fromage_frais: 0.3 unit
 
