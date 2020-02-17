@@ -15,8 +15,8 @@ ureg.define('onion = 90 grams')
 ureg.define('red_onion = 90 grams')
 ureg.define('roll = 60 grams')
 ureg.define('vege_burger = 125 grams')
-ureg.define('leaf = 5 grams')
-ureg.define('sprig = 5 grams')
+ureg.define('bay_leaf = 5 grams')
+ureg.define('thyme_sprig = 5 grams')
 ureg.define('turnip = 500 grams')
 ureg.define('parsnip = 112 grams')
 ureg.define('garlic_clove = 7 grams')
@@ -31,11 +31,15 @@ ureg.define('large_jar = 800 grams')
 ureg.define('tomato = 62 grams')
 ureg.define('slice = 10 grams')
 ureg.define('potato = 150 grams')
-ureg.define('unit = 1 grams')
-
+ureg.define('garlic_bulb = 9 garlic_clove')
+ureg.define('bread_loaf = 8 bread_slice')
+ureg.define('celery = 16 celery_stick')
+ureg.define('pinch = 3 grams')
 
 # 1 tsp smoked paprika = 3.3g
 # 9 cloves garlic in a bulb
+
+DEBUG = True
 
 def get_args():
     """
@@ -93,6 +97,11 @@ class Ingredient():
             self.value = value * ureg.parse_expression(name)
 
     def add(self, value, unit):
+        if DEBUG:
+            # pdb.set_trace()
+            print((value,unit))
+            print("adding " + self.name + " with unit " + unit + " and existing unit" + str(self.value.units))
+
         if len(unit) > 0:
             self.value = self.value + (value * ureg.parse_expression(unit))
         else:
@@ -111,12 +120,10 @@ class Ingredients():
 
     # Unit equivalents.
     equi = dict()
-    equi['onions'] = ['onion']
-    equi['celery'] = ['celery_sticks']
-    equi['carrots'] = ['carrot']
+    # equi['celery'] = ['celery_sticks']
+    # equi['carrots'] = ['carrot']
     equi['garlic_cloves'] = ['garlic']
-    equi['garlic_cloves'] = ['garlic_clove']
-    equi['tomato'] = ['tomatoes']
+    # equi['tomato'] = ['tomatoes']
 
 
     def __init__(self):
@@ -176,8 +183,6 @@ def process_menu(menu_yaml, outdir, pdf_generation):
             # not very elegant
             print("Can't open %s as recipe... trying as single ingredient" % item)
             (number, unit) = amount_units(menu[item])
-            if unit == '':
-                unit = 'unit'
             print("%20s: %8.2f %s" % (item, float(number), unit))
             ingredients.add(item, float(number), unit)
             print("skip ingredients")

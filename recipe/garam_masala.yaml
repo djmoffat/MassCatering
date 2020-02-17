@@ -1,13 +1,13 @@
 name: Garam Masala
 serves: 1
 ingredients:
-    cumin_seeds: 2 tbsp
-    coriander_seeds: 3 tbsp
-    cardamon_seeds: 2 tbsp
-    black_peppercorns: 2 tbsp
+    cumin_seed: 2 tbsp
+    coriander_seed: 3 tbsp
+    cardamon_seed: 2 tbsp
+    black_peppercorn: 2 tbsp
     clove: 1 tsp
     nutmeg: 1 tsp
-    cinamon_stick: 1 unit
-    fennel_seeds: 2 tbsp
-    mustard_seeds: 1 tbsp
-    bay_leaves: 1 unit
+    cinamon_stick: 1
+    fennel_seed: 2 tbsp
+    mustard_seed: 1 tbsp
+    bay_leaf: 1

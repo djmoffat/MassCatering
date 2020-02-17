@@ -3,7 +3,7 @@ serves: 8
 url: https://www.theguardian.com/lifeandstyle/2007/oct/21/foodanddrink.features3
 ingredients:
     onion: 1
-    cloves: 4
+    clove: 4
     milk: 500ml
     bay_leaf: 1
     bread: 125g
