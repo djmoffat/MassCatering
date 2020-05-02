@@ -1,12 +1,11 @@
 name: General Item By Person
 serves: 1
 ingredients:
-    tea_bags: 2 
-    coffee: 10g
+    tea_bag: 1.3
+    coffee: 8g
     hot_chocolate: 5g
     sugar: 2g
     milk: 100 ml
     squash: 50 ml
-    biscuit: 0.5 unit
     
 

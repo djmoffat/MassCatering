@@ -13,7 +13,12 @@ python compile_menu.py menu/weekend.yaml
 
 Compile md to pdf requires pandoc and latex installations.
 
+# Standards
+Convention when creating a recipe, is that all ingredients are defined in the singular. 
+
 
 # Required modules
+
 pint
+
 yaml

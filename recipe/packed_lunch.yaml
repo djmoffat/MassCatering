@@ -3,9 +3,9 @@ serves: 1
 ingredients:
     banana: 0.3
     apple: 0.3
-    orange: 0.3 unit
+    orange: 0.3
     roll: 1
-    bread: 1 slices
+    bread: 1 slice
     ham: 10g
     tuna: 0.1 can
     mayonnaise: 5g
@@ -14,9 +14,9 @@ ingredients:
     cheese: 15g
     lettuce: 0.05
     tomato: 0.3
-    cucumber: 0.075 unit
-    crisps: 1 unit
-    biscuit: 1 unit
-    sandwich_bag: 1 unit
-    fromage_frais: 0.3 unit
+    cucumber: 0.075
+    crisp: 1
+    biscuit: 1
+    sandwich_bag: 1
+    fromage_frais: 0.3
 
