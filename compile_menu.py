@@ -32,6 +32,8 @@ ureg.define('tomato = 62 grams')
 ureg.define('slice = 10 grams')
 ureg.define('potato = 150 grams')
 ureg.define('unit = 1 grams')
+ureg.define('lemon = 58 g')
+ureg.define('butternut_squash = 910 g')
 
 
 # 1 tsp smoked paprika = 3.3g
