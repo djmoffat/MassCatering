@@ -28,3 +28,6 @@ cucumber = 310 grams
 roll = 60g
 loaf = 800g
 slice = loaf/16
+lemon = 58 grams
+butternut_squash = 910 grams
+
