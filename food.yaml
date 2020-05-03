@@ -1,20 +1,28 @@
 food_colouring:
     shop: Supermarket
     unit: g
-kidney_beans:
+kidney_bean:
     shop: Supermarket
     unit: g
 button_mushroom:
     shop: Supermarket
 sunflower_oil:
     shop: Supermarket
+pork_belly:
+    shop: Butchers
 mince:
     shop: Butchers
 pork_mince:
     shop: Butchers
 beef_mince:
     shop: Butchers
-sausages:
+diced_lamb:
+    shop: Butchers
+black_pudding:
+    shop: Butchers
+sausage:
+    shop: Butchers
+chipolata_sausage:
     shop: Butchers
 bacon:
     shop: Butchers
@@ -22,7 +30,7 @@ haggis:
     shop: Butchers
 veggie_haggis:
     shop: Butchers
-corriander_seeds:
+corriander_seed:
     shop: Supermarket
 chickpea:
     shop: Supermarket
@@ -56,7 +64,7 @@ suet:
     shop: Supermarket
 stout:
     shop: Supermarket
-mustard_seeds:
+mustard_seed:
     shop: Supermarket
 white_wine:
     shop: Supermarket
@@ -68,6 +76,7 @@ tomato_puree:
     shop: Supermarket
 bread:
     shop: Supermarket
+    unit: loaf
 white_vinegar:
     shop: Supermarket
 thyme_sprig:
@@ -90,11 +99,11 @@ beef_stock:
     shop: Supermarket
 chilli_powder:
     shop: Supermarket
-tomato_paste:
-    shop: Supermarket
-rice_crispies:
+rice_crispie:
     shop: Supermarket
 pepper:
+    shop: Supermarket
+red_pepper:
     shop: Supermarket
 marmalade:
     shop: Supermarket
@@ -124,17 +133,17 @@ selfraising_flour:
     shop: Supermarket
 veg_stock:
     shop: Supermarket
-corriander:
+coriander:
     shop: Supermarket
 bay_leaf:
     shop: Supermarket
-califlower:
+cauliflower:
     shop: Supermarket
 caramel_can:
     shop: Supermarket
 cheddar_cheese:
     shop: Supermarket
-portobello_mushrooms:
+portobello_mushroom:
     shop: Supermarket
 apple:
     shop: Supermarket
@@ -142,11 +151,11 @@ orange:
     shop: Supermarket
 weetabix:
     shop: Supermarket
-gerkins:
+gerkin:
     shop: Supermarket
 fresh_corriander:
     shop: Supermarket
-rolls:
+roll:
     shop: Supermarket
 balsamic:
     shop: Supermarket
@@ -162,6 +171,8 @@ caster_sugar:
     shop: Supermarket
 butter:
     shop: Supermarket
+cinnamon:
+    shop: Supermarket
 chocolate:
     shop: Lidl
 rice:
@@ -174,13 +185,13 @@ self_raising_flour:
     shop: Supermarket
 olive_oil:
     shop: Supermarket
-onion_seeds:
+onion_seed:
     shop: Supermarket
 ginger:
     shop: Supermarket
 carrot:
     shop: Supermarket
-cornflakes:
+cornflake:
     shop: Supermarket
 dried_chickpea:
     shop: Supermarket
@@ -196,21 +207,21 @@ fenugreek:
     shop: Supermarket
 mustard:
     shop: Supermarket
-tinned_tomatoe:
-    shop: Supermarket
 garlic_clove:
     shop: Supermarket
 red_chilli:
     shop: Supermarket
 tomato:
     shop: Supermarket
+cherry_tomato:
+    shop: Supermarket
 potato:
     shop: Supermarket
-indian_breads:
+indian_bread:
     shop: Supermarket
 salt:
     shop: Supermarket
-tea_bags:
+tea_bag:
     shop: Supermarket
 coffee:
     shop: Supermarket
@@ -232,9 +243,9 @@ olive_oil:
     shop: Supermarket
 sunflower_oil:
     shop: Supermarket
-marshmallows:
+marshmallow:
     shop: Supermarket
-kids_yogurts:
+kids_yogurt:
     shop: Supermarket
 full_fat_milk:
     shop: Supermarket
@@ -244,15 +255,15 @@ sweet_potato:
     shop: Supermarket
 tin_coconut_milk:
     shop: Supermarket
-crisps:
+crisp:
     shop: Supermarket
-cardamon:
+cardamom:
     shop: Supermarket
-frozen_peas:
+frozen_pea:
     shop: Supermarket
-garlic_cloves:
+garlic_clove:
     shop: Supermarket
-hummous:
+hummus:
     shop: Supermarket
 cucumber:
     shop: Supermarket
@@ -272,7 +283,7 @@ melon:
     shop: Supermarket
 grape:
     shop: Supermarket
-oranges:
+orange:
     shop: Supermarket
 pineapple:
     shop: Supermarket

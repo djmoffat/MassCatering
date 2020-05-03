@@ -11,11 +11,11 @@ ingredients:
     sage: 1tbsp
     cayenne: 1 tsp
     potato: 175g
-    cabbage: 0.16 unit
+    cabbage: 0.16
     carrot: 125g
     parsnip: 75g
 
-method: 
+method: |
     0. Potato, cabbage, carrot and parsnip for roasting separately
     1. Pre-heat oven to 180C/350F/gas mark 4
     2. Saute the onion or leek in the oil until soft, not browned.

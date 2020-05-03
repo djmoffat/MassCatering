@@ -3,7 +3,7 @@ serves: 12
 ingredients:
     onion: 2
     garlic_clove: 1
-    celery: 3 unit
+    celery: 3
     carrot: 3
     stock: 800ml
     button_mushroom: 240g
@@ -17,7 +17,7 @@ ingredients:
     tomato_puree: 240g
     balsamic: 30ml
     cornflower: 30g
-    frozen_peas: 200g
+    pea: 200g
 method: |
     1. Mince the carrot, celery stalk, and small onion very fine.
     2. Saute this mixture in quater cup of veggie broth until the veggies are nice and soft.

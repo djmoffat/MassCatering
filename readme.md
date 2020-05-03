@@ -6,14 +6,29 @@ The basic use of this is to take a bunch of recipes work out the quantities for 
 Example usage:
 
 ```
-python compile_menu.py menu/weekend.yaml
+./compile_menu.py [-h] [-o OUTPUT] [-p] [menu]
 
+Compile a menu and calculate the required quantities.
+
+positional arguments:
+  menu                  YAML file describing menu.
+
+optional arguments:
+    -h, --help            show help message
+    -o OUTPUT, --output OUTPUT
+                          Output directory
+    -v, --verbose         verbose output, printing explicit menu parsing and
+                            adding of items.
+    -p, --pdf-generation  Use pandoc to generate pdf from all markdown files in
+                            menu - requires pandoc and latex
 ```
 
 
 Compile md to pdf requires pandoc and latex installations.
 
+# Standards
+Convention when creating a recipe, is that all ingredients are defined in the singular. 
 
-# Required modules
-pint
-yaml
+If an item does not exist, add it to the unit_registry, with the average weight of that item, so that an item weight can be calculated instead of number of items.
+
+Generic items can included, without adding to the unit registry, through the use of 'quantity', which is used as a dimensionless quantity, to allow for quick addition of items.

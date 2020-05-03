@@ -1,25 +1,25 @@
 name: Mexican Chilli
 serves: 14
 ingredients:
-    kidney_beans: 2 cans
-    black_beans: 1 cans
+    kidney_bean: 2 cans
+    black_bean: 1 cans
     olive_oil: 4 tbsp
     pork_mince: 900g
     beef_mince: 900g
     streaky_bacon: 250g
     onion: 6
     garlic_clove: 4
-    bay_leaf: 3 unit
-    lemon: 3 unit
+    bay_leaf: 3
+    lemon: 3
     chilli_powder: 4 tbsp
     cumin: 1 tbsp
     oregano: 2 tbsp
     tomato_pruee: 3 tbsp
-    chopped_tomatoes: 2 can
+    chopped_tomato: 2 can
     red_wine: 300ml
     beef_stock: 300ml
     soured_cream: 600ml
-    chives: 30g
+    chive: 30g
 
 method: |
     0. finely chop onions and garlic. Chop the celery

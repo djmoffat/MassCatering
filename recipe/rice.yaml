@@ -3,7 +3,7 @@ serves: 1
 ingredients:
     rice: 75g
     water: 225ml
-method:
+method: |
     0. Absorption Method
     1. Add 1 3/4 cups of water per cup of rice
     2. Bring to the boil. reduce to a simmer

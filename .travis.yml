@@ -1,0 +1,13 @@
+#
+# Simple Travis Tests
+#
+dist: bionic
+language: python
+python:
+  - "3.5"
+  - "3.6"
+  - "3.7"
+  - "3.8"
+# Currently we just have some simple doctests
+script:
+  - python3 -m doctest -v compile_menu.py

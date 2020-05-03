@@ -1,15 +1,15 @@
-name: Sunday Roast Dinner
+name: Roast Dinner
 serves: 1
 ingredients:
-    onion: 0.1 unit
+    onion: 0.1
     potato: 200g
-    cabbage: 0.167 unit
+    cabbage: 0.167
     carrot: 125g
     parsnip: 75g
     pork_belly: 300g
-    garlic_cloves: 1
+    garlic_clove: 1
     
-method: 
+method: |
     1. recipe outline for approx budget - but please refine this recipe
     2. Potatoes to be split for half mash and half roast
   
