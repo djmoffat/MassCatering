@@ -1,5 +1,6 @@
 Mass Catering - menu compiler
 =============================
+[![Build Status](https://travis-ci.com/djmoffat/MassCatering.svg?branch=master)](https://travis-ci.com/djmoffat/MassCatering)
 
 The basic use of this is to take a bunch of recipes work out the quantities for the number of servings requested, and finally produce scaled up versions of each recipe as well as a complete shopping list.
 
