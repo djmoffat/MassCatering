@@ -21,6 +21,8 @@ def get_args():
                         help="YAML file describing menu.")
     parser.add_argument('-o', '--output', default="output",
                         help="Output directory")
+    parser.add_argument('-v', '--verbose', action='store_true',
+                        help='verbose output, printing explicit menu parsing and adding of items.')
     parser.add_argument('-p', '--pdf-generation', action='store_true',
                         help="Use pandoc to generate pdf from all markdown files in menu - requires pandoc and latex")
     return parser.parse_args()
@@ -89,13 +91,13 @@ class Ingredients():
         ingredient = self.equivalent_check(ingredient)
         if ingredient in self.list:
             a = self.list[ingredient]
-            print("Adding {!s}: {!s}".format(quantity, ingredient))
+            verboseprint('Adding', quantity, ingredient)
             a.add(quantity)
             self.list[ingredient] = a
         else: # add ingredient to list
             if ingredient in self.food and 'unit' in self.food[ingredient]:
                 quantity = ureg('0 '+self.food[ingredient]['unit']) + quantity
-            print("Adding {!s}: {!s}".format(quantity, ingredient))
+            verboseprint('Adding', quantity, ingredient)
             self.list[ingredient] = Ingredient(ingredient, quantity)
 
     def equivalent_check(self, ingredient):
@@ -126,6 +128,18 @@ class Ingredients():
         return output
 
 
+def set_verbose_print(vprint):
+    global verboseprint
+    if vprint:
+        def verboseprint(*args):
+        # Print each argument separately so caller doesn't need to
+        # stuff everything to be printed into a single string
+            for arg in args:
+                print(arg,end=' ')
+            print()
+    else:   
+        verboseprint = lambda *a: None      # do-nothing function
+
 def process_menu(menu_yaml, outdir, pdf_generation):
     ingredients = Ingredients()
     menu = open_yaml(menu_yaml)
@@ -138,7 +152,7 @@ def process_menu(menu_yaml, outdir, pdf_generation):
             recipe = open_yaml(file)
         except FileNotFoundError:
             # not very elegant
-            print("Can't open %s as recipe... trying as single ingredient" % recipe_name)
+            verboseprint("Can't open %s as recipe... trying as single ingredient" % recipe_name)
             if isinstance(menu[recipe_name], (int, float)):
                 try:
                     amount = ureg(str(menu[recipe_name])+recipe_name)
@@ -147,7 +161,7 @@ def process_menu(menu_yaml, outdir, pdf_generation):
             else:
                 amount = ureg(menu[recipe_name])
 
-            print('{!s}: {!s}\n'.format(recipe_name, amount))
+            verboseprint(recipe_name, ':', amount)
             ingredients.add(recipe_name, amount)
             skip = True
             continue
@@ -158,7 +172,7 @@ def process_menu(menu_yaml, outdir, pdf_generation):
                 mdname = os.path.basename(recipe_name + ".md")
                 if day != 'people':
                     mdname = day + '_' + mdname
-                    print(mdname)
+                    verboseprint(mdname)
 
                 f = open(os.path.join(outdir, mdname), "w")
                 f.write("# {!s} {!s}\n".format(day, recipe['name']))
@@ -178,10 +192,10 @@ def process_menu(menu_yaml, outdir, pdf_generation):
                     # There must be a better way of testing whether or not an item has been defined
                     if isinstance(recipe['ingredients'][ingredient], (int, float)):
                         try:
-                            print('trying to use predefined item')
+                            verboseprint('trying to use predefined item', ingredient)
                             amount = ureg(str(recipe['ingredients'][ingredient])+ingredient)
                         except: 
-                            print('failed - defining new item')
+                            verboseprint('failed - defining new item',  ingredient, '- set to dimensionless quantity')
                             # Currently set undefined items to a 'quantity' rather than the individual defined item
                             amount = ureg(str(recipe['ingredients'][ingredient])+'quantity')
                     else:
@@ -216,4 +230,5 @@ def process_menu(menu_yaml, outdir, pdf_generation):
 
 if __name__ == "__main__":
     args = get_args()
+    set_verbose_print(args.verbose)
     process_menu(args.menu, args.output, args.pdf_generation)

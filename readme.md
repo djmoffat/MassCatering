@@ -17,8 +17,10 @@ optional arguments:
     -h, --help            show help message
     -o OUTPUT, --output OUTPUT
                           Output directory
+    -v, --verbose         verbose output, printing explicit menu parsing and
+                            adding of items.
     -p, --pdf-generation  Use pandoc to generate pdf from all markdown files in
-                          menu - requires pandoc and latex
+                            menu - requires pandoc and latex
 ```
 
 
