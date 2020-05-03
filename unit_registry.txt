@@ -9,7 +9,8 @@ thyme_sprig = 5 grams
 turnip = 500 grams
 parsnip = 112 grams
 garlic_clove = 7 grams
-egg_large = 70 grams
+egg_large = 68 grams
+egg_medium = 58 grams
 banana = 183 grams
 apple = 85 grams
 tea_bag = 2 grams
@@ -30,4 +31,5 @@ loaf = 800g
 slice = loaf/16
 lemon = 58 grams
 butternut_squash = 910 grams
+
 

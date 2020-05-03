@@ -88,13 +88,11 @@ class Ingredients():
     def add(self, ingredient, quantity):
         ingredient = self.equivalent_check(ingredient)
         if ingredient in self.list:
-            # increment ingredient by quantity
             a = self.list[ingredient]
             print("Adding {!s}: {!s}".format(quantity, ingredient))
             a.add(quantity)
             self.list[ingredient] = a
-        else:
-            # add ingredient to list
+        else: # add ingredient to list
             if ingredient in self.food and 'unit' in self.food[ingredient]:
                 quantity = ureg('0 '+self.food[ingredient]['unit']) + quantity
             print("Adding {!s}: {!s}".format(quantity, ingredient))
