@@ -4,7 +4,6 @@ import yaml
 import re
 import sys
 import os
-import pdb
 from pint import UnitRegistry
 from argparse import ArgumentParser
 
@@ -88,14 +87,16 @@ class Ingredients():
 
     def add(self, ingredient, quantity):
         ingredient = self.equivalent_check(ingredient)
-        print(ingredient)
         if ingredient in self.list:
-            #try:
+            # increment ingredient by quantity
             a = self.list[ingredient]
             print("Adding {!s}: {!s}".format(quantity, ingredient))
             a.add(quantity)
             self.list[ingredient] = a
         else:
+            # add ingredient to list
+            if ingredient in self.food and 'unit' in self.food[ingredient]:
+                quantity = ureg('0 '+self.food[ingredient]['unit']) + quantity
             print("Adding {!s}: {!s}".format(quantity, ingredient))
             self.list[ingredient] = Ingredient(ingredient, quantity)
 

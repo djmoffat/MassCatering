@@ -76,6 +76,7 @@ tomato_puree:
     shop: Supermarket
 bread:
     shop: Supermarket
+    unit: loaf
 white_vinegar:
     shop: Supermarket
 thyme_sprig:
